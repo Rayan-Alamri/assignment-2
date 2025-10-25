@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta for UTF-8 and responsive layouts -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Portfolio</title>
+
+  <!-- Main stylesheet -->
+  <link href="css/style.css" rel="stylesheet" />
+
+  <!-- JS for smooth scrolling + dark mode toggle (defer = run after HTML parsed) -->
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <!-- Site header with primary navigation -->
+  <header>
+    <h1>Rayan Alamri</h1>
+
+    <!-- aria-label helps assistive tech identify this nav -->
+    <nav class="navigation" aria-label="Primary">
+      <!-- In-page links jump to section IDs -->
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+
+      <!-- Theme toggle (handled by JS), aria-pressed reflects current state -->
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+        <span class="theme-toggle__label">Toggle theme</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ABOUT: section landmark with container width helper -->
+    <section id="about" class="container reveal">
+      <h2>About Me</h2>
+      <!-- Regular paragraph (not a heading) for body copy -->
+      <p>
+        I'm Rayan Alamri, a CS student at KFUPM. I enjoy turning small ideas into working
+        prototypes and refining them with feedback. Lately Iâ€™ve been exploring web
+        development and automation to solve everyday problems.
+      </p>
+    </section>
+
+    <!-- PROJECTS: one container, then a list of cards -->
+    <section id="projects" class="container reveal">
+      <h2>Projects</h2>
+
+      <!-- Use a single list wrapper; each project is a card -->
+      <div class="projects-list">
+        <article class="project-card reveal">
+          <button class="project-toggle" type="button" aria-expanded="false" aria-controls="project-1">
+            <span class="project-title">MIPS CPU in Logisim</span>
+            <span class="project-toggle-icon" aria-hidden="true"></span>
+          </button>
+          <div class="project-content" id="project-1" hidden>
+            <p>
+              Built a simple single-cycle CPU in Logisim to execute a small subset of MIPS-style
+              instructions (add, sub, lw, sw, beq). Designed the datapath and control unit, then
+              verified behavior with test programs in the MARS simulator.
+            </p>
+            <!-- Placeholder image (replace later with real screenshot) -->
+            <img src="assets\images\placeHolder.jpg" alt="Mars CPU project placeholder image" />
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <button class="project-toggle" type="button" aria-expanded="false" aria-controls="project-2">
+            <span class="project-title">University League Organizer (Website)</span>
+            <span class="project-toggle-icon" aria-hidden="true"></span>
+          </button>
+          <div class="project-content" id="project-2" hidden>
+            <p>
+              A lightweight website to register teams, generate fixtures, and track standings for
+              the university league. Focused on a clean, mobile-first UI and simple interactions
+              for organizers and players.
+            </p>
+            <img src="assets\images\placeHolder.jpg" alt="League organizer site placeholder image" />
+          </div>
+        </article>
+      </div>
+      <p id="projectsEmpty" class="projects-empty reveal" hidden>No projects found. Check back soon!</p>
+    </section>
+
+    <section id="advice" class="container reveal">
+      <h2>Advice of the Day</h2>
+      <article class="advice-card">
+        <p id="adviceText" class="advice-text" aria-live="polite">Loading advice...</p>
+        <div class="advice-actions">
+          <button id="adviceRefresh" type="button" class="advice-button">New Advice</button>
+          <span id="adviceStatus" class="advice-status" role="status" aria-live="polite"></span>
+        </div>
+      </article>
+    </section>
+
+    <!-- CONTACT: accessible labels + required fields; no backend -->
+    <section id="contact" class="container reveal">
+      <h2>Contact</h2>
+      <form>
+        <!-- label[for] must match input[id] for accessibility -->
+        <label for="name">Name:</label>
+        <input id="name" name="name" type="text" required aria-describedby="nameError" />
+        <span id="nameError" class="field-error" role="alert" aria-live="polite" hidden></span>
+
+        <label for="email">Email:</label>
+        <!-- type="email" + pattern enforce presence of domain -->
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+          aria-describedby="emailError"
+          title="Enter a valid email, e.g. name@example.com"
+        />
+        <span id="emailError" class="field-error" role="alert" aria-live="polite" hidden></span>
+
+        <label for="message">Message:</label>
+        <!-- textarea for multi-line message -->
+        <textarea id="message" name="message" rows="5" required aria-describedby="messageError"></textarea>
+        <span id="messageError" class="field-error" role="alert" aria-live="polite" hidden></span>
+
+        <!-- No action attribute = no network request; JS can show a status later -->
+        <button type="submit">Send</button>
+        <p id="formStatus" role="status" aria-live="polite" class="form-status" hidden></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Page footer (outside main for proper landmarks) -->
+  <footer>
+    <p>
+      <small>Â© <span id="year"></span> Rayan Alamri. All rights reserved.</small>
+    </p>
+  </footer>
+</body>
+</html>
+
