@@ -67,7 +67,7 @@ For the full log, see [`docs/ai-usage-report.md`](docs/ai-usage-report.md).
 
 ## 🌐 Live Demo
 
-Available at: https://stellar-platypus-799482.netlify.app/#projects
+Available at: https://endearing-chebakia-5604e8.netlify.app/
 
 ---
 
