@@ -18,7 +18,7 @@ It demonstrates HTML, CSS, and JavaScript fundamentals, along with AI-assisted d
   - Animated circular dark/light theme toggle with saved preference
   - Accessible project accordion with reveal transitions and ARIA updates
   - Advice widget with loading, error, and retry messaging
-  - Form status banner plus animated success/error feedback
+  - Form status banner plus animated success/error feedback and quick inline instructions
 - **Clean design**: CSS variables for colors, spacing, and theming; card hover states and reveal animations.
 - **Accessibility considerations**: Proper heading hierarchy, labelled form fields, live regions for status messages, and persistent aria state.
 
@@ -43,14 +43,15 @@ It demonstrates HTML, CSS, and JavaScript fundamentals, along with AI-assisted d
 ## 🤖 AI Usage Summary
 
 **ChatGPT assisted in:**
-- Brainstorming alternate layouts and accessibility tweaks
-- Providing starter snippets for the accordion, advice fetch, and theme toggle animation
-- Suggesting validation copy and documentation outlines
+- Brainstorming alternate layouts, accessibility tweaks, and performance optimisations
+- Providing starter snippets for the accordion, advice fetch, theme toggle animation, and form help text
+- Helping summarise and format Advice Slip API responses for the UI
 
 **My role:**
 - Authored the final HTML/CSS/JS structure, adapting or rewriting AI drafts where needed
-- Implemented the advice API integration, inline validation flows, and reveal animations
+- Implemented the advice API integration, inline validation flows, help messages, and reveal animations
 - Designed the animated theme toggle, tuned transitions, and ensured ARIA/state sync
+- Applied AI-suggested accessibility/performance improvements after verification
 - Tested behaviour across breakpoints, dark/light themes, and error scenarios
 - Wrote the final documentation (README, AI report, technical guide) and kept it updated
 
