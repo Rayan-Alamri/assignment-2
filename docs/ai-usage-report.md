@@ -2,66 +2,60 @@
 
 **Course / Assignment:** SWE363 – Assignment 2 (Interactive Portfolio Enhancements)
 **Student:** Rayan Alamri – 202247900
-**Repo:** https://github.com/Rayan-Alamri/assignment-2
+**Repo:** https://github.com/Rayan-Alamri/assignment-1
 **Session Date:** 25/09/2025
 
 ---
 
 ## 1) Tools Used & Concrete Use Cases
 - **ChatGPT (this session)**
-  - Converted static project cards into an accessible accordion with animated transitions.
-  - Added IntersectionObserver reveal effects and hover polish for sections/cards.
-  - Integrated the Advice Slip API with loading, error, and retry states.
-  - Hardened the contact form with inline validation, ARIA messaging, and animated status feedback.
-  - Redesigned the circular dark/light theme toggle with scripted pulse animation and aria updates.
-- **VS Code + Live Server**
-  - Rapid preview while tweaking CSS animations and JS interactions.
-- **Chrome DevTools**
-  - Verified accessibility attributes, transition timing, and localStorage values.
-  - Tested offline/error states for the advice API.
+  - Helped organise code by suggesting modular JS sections (accordion, advice fetch, theme toggle).
+  - Assisted in refining validation logic for inline errors and status messaging.
+  - Supported API integration with the Advice Slip service, including loading/error handling patterns.
+  - Offered accessibility/performance suggestions (IntersectionObserver reveals, aria updates).
+  - Collaborated on documentation drafts and structure.
+- **VS Code + Live Server** – rapid preview while adjusting CSS animations and JS behaviour.
+- **Chrome DevTools** – verified accessibility attributes, animation timing, network responses, and localStorage persistence.
 
 ---
 
 ## 2) Benefits & Challenges
 **Benefits**
-- Accelerated prototyping of complex UI states (accordion + animations) without starting from scratch.
-- Consistent accessibility guidance (aria attributes, focus handling, validation messaging).
-- Quick iteration on the theme toggle design, matching the provided reference.
+- Faster iteration on complex UI flows (accordion transitions, advice widget states) thanks to AI prompts.
+- Validation guidance reduced trial-and-error for inline errors and aria messaging.
+- Structured documentation support kept README/technical docs aligned with code.
 
 **Challenges**
-- Needed to refactor existing markup/CSS to accept the new toggle button structure.
-- Ensured custom validation didn’t fight native browser messages; reconciled by using `setCustomValidity` carefully.
-- Cached responses from the advice API sometimes caused stale data, so we appended a timestamp and disabled cache.
+- Integrating AI snippets into the existing codebase required careful refactoring to maintain style consistency.
+- Advice API caching had to be bypassed; solved by appending timestamps and disabling cache.
+- Ensuring animations respected `prefers-reduced-motion` whenever new effects were added.
 
 ---
 
 ## 3) Understanding & Rationale
-- **Accordion vs. static cards:** Improves information density while keeping content screen-reader friendly through `aria-expanded` and `hidden` management.
-- **IntersectionObserver reveals:** Provides motion that respects `prefers-reduced-motion`; elements progressively reveal for perceived performance.
-- **Advice API loading/error UX:** Communicates background activity and lets the user retry, meeting assignment requirements.
-- **Inline form errors:** Immediate feedback reduces submission friction and demonstrates client-side validation competence.
-- **Animated theme toggle:** Shows design intent from the reference image and reinforces state changes visually.
+- **Accordion with animations:** Improves UX while maintaining accessibility through `aria-expanded` and `hidden` attributes; JS delays hiding until fade-out completes.
+- **Advice API widget:** Shows loading text, success, and error states so users always know what’s happening.
+- **Inline form validation:** Provides immediate feedback, keeps focus on the first invalid field, and animates success confirmation.
+- **Theme toggle redesign:** Circular animation mirrors the provided design reference and visually confirms state changes.
 
 ---
 
-## 4) Responsible Use of AI
-- Reviewed each generated code block, refactored variable names, and removed unused branches.
-- Tested all interactions manually (accordion, theme toggle, API fetch, validation) before accepting changes.
-- Added explanatory comments sparingly to describe non-obvious behaviour (e.g., hiding accordion content after transition).
-- Documented exactly where AI contributed (README + this report) to maintain transparency.
+## 4) Responsibilities & Collaboration
+- **Student (Rayan):** Planned the overall architecture, implemented the HTML/CSS/JS, reviewed every AI snippet, adapted styling to match the brief, and tested across breakpoints/themes/API scenarios using DevTools.
+- **ChatGPT:** Assisted with code organisation, validation logic, and API integration patterns; suggested accessibility/performance tweaks; contributed to documentation structure.
 
 ---
 
 ## 5) Innovation & Creativity
-- Collapsible project cards with delayed hide/show logic to keep animations smooth.
-- Advice widget featuring manual refresh and accessible status text.
-- Animated circular theme toggle that pulses on change and adapts ARIA labels dynamically.
-- Comprehensive inline form validation with focus management on first error.
+- Project accordion with delayed hide logic and reveal animations.
+- Advice widget featuring manual refresh, loading/error messaging, and polite live-region updates.
+- Animated circular theme toggle that pulses on change and syncs aria labels.
+- Inline help/error text with focus management to keep the form accessible.
 
 ---
 
 ## 6) Learning Outcomes
-- Strengthened knowledge of accessible animations (respecting reduced-motion, using IntersectionObserver).
-- Practiced advanced state management in vanilla JS (aria attributes, hidden vs. opacity transitions).
-- Learned how to gracefully handle external API failures inside a static site.
-- Reinforced the value of descriptive documentation when iterating with AI assistance.
+- Reinforced modular JS patterns for UI state management without frameworks.
+- Practiced accessible animation techniques and reduced-motion fallbacks.
+- Gained experience handling third-party APIs in a static frontend.
+- Improved documentation workflow by iterating alongside AI assistance.
