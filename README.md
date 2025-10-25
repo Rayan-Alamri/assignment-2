@@ -43,16 +43,16 @@ It demonstrates HTML, CSS, and JavaScript fundamentals, along with AI-assisted d
 ## 🤖 AI Usage Summary
 
 **ChatGPT assisted in:**
-- Planning semantic HTML structure and container classes
-- Building reusable CSS tokens and animated components (accordion, theme toggle)
-- Adding smooth scrolling, reveal animations, and advice API integration
-- Implementing inline form validation, ARIA messaging, and error handling
-- Drafting this README, the AI Usage Report, and technical documentation updates
+- Brainstorming alternate layouts and accessibility tweaks
+- Providing starter snippets for the accordion, advice fetch, and theme toggle animation
+- Suggesting validation copy and documentation outlines
 
 **My role:**
-- Reviewed, adapted, and tested every AI-generated snippet
-- Tuned styling to match the assignment brief and personal preferences
-- Verified accessibility, animation timing, and API behaviour in DevTools
+- Authored the final HTML/CSS/JS structure, adapting or rewriting AI drafts where needed
+- Implemented the advice API integration, inline validation flows, and reveal animations
+- Designed the animated theme toggle, tuned transitions, and ensured ARIA/state sync
+- Tested behaviour across breakpoints, dark/light themes, and error scenarios
+- Wrote the final documentation (README, AI report, technical guide) and kept it updated
 
 For the full log, see [`docs/ai-usage-report.md`](docs/ai-usage-report.md).
 
